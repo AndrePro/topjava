@@ -49,7 +49,6 @@ public class UserTestData {
                     ", name=" + name +
                     ", enabled=" + enabled +
                     ", password=" + password +
-                    ", authorities=" + roles +
                     ')';
         }
 

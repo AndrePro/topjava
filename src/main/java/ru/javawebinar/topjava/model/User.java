@@ -84,6 +84,10 @@ public class User extends NamedEntity {
         return roles;
     }
 
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
     public String getPassword() {
         return password;
     }
@@ -95,7 +99,6 @@ public class User extends NamedEntity {
                 ", email=" + email +
                 ", name=" + name +
                 ", enabled=" + enabled +
-                ", roles=" + roles +
                 ", caloriesPerDay=" + caloriesPerDay +
                 ')';
     }
