@@ -19,3 +19,14 @@ CREATE TABLE user_roles
   role    VARCHAR(50),
   FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
 );
+
+CREATE TABLE meals (
+  id          INTEGER PRIMARY KEY AUTO_INCREMENT,
+  user_id     INTEGER NOT NULL,
+  date_time    TIMESTAMP,
+  description TEXT,
+  calories    INT,
+  FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE
+);
+
+ALTER TABLE meals AUTO_INCREMENT = 100000;
