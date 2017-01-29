@@ -1,4 +1,5 @@
 DELETE FROM user_roles;
+DELETE FROM meals;
 DELETE FROM users;
 ALTER TABLE users AUTO_INCREMENT = 100000;
 ALTER TABLE meals AUTO_INCREMENT = 100002; -- тк в исходном заполнении глобальный сиквенс SEQUENCE global_seq RESTART WITH 100000;

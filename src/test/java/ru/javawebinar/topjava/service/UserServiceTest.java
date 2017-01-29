@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlConfig;
@@ -17,6 +18,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 
+import static ru.javawebinar.topjava.Profiles.POSTGRES;
 import static ru.javawebinar.topjava.UserTestData.*;
 
 @ContextConfiguration({
@@ -24,8 +26,9 @@ import static ru.javawebinar.topjava.UserTestData.*;
         "classpath:spring/spring-db.xml"
 })
 @RunWith(SpringJUnit4ClassRunner.class)
-@Sql(scripts = "classpath:db/populateDB.sql", config = @SqlConfig(encoding = "UTF-8"))
-/*@Sql(scripts = "classpath:db/populateDB_mysql.sql", config = @SqlConfig(encoding = "UTF-8"))*/
+//@Sql(scripts = "classpath:db/populateDB.sql", config = @SqlConfig(encoding = "UTF-8"))
+@ActiveProfiles(POSTGRES/*HSQLDB*/)
+@Sql(scripts = "classpath:db/populateDB_mysql.sql", config = @SqlConfig(encoding = "UTF-8"))
 public class UserServiceTest {
 
     @Autowired
