@@ -16,8 +16,8 @@ import static ru.javawebinar.topjava.Profiles.POSTGRES;
  * Date: 10.08.2014
  */
 @ContextConfiguration({
-        "classpath:spring/spring-app.xml",
-        "classpath:spring/spring-db.xml"
+        "classpath:spring/spring-db.xml",
+        "classpath:spring/spring-app.xml"
 })
 @RunWith(SpringJUnit4ClassRunner.class)
 @ActiveProfiles({POSTGRES})
